@@ -40,19 +40,22 @@
 	}
 </script>
 
-<style>
-.search .input-box {
-  background-color: #EB4450;
-  padding: 20rpx;
-}
-.search .input-box input {
-  background-color: #fff;
-}
-swiper {
-  height: 340rpx;
-}
-swiper image {
-  width: 750rpx;
-  height: 340rpx;
-}
+<style lang='less'>
+	.search {
+		.input-box {
+		    background-color: #EB4450;
+		    padding: 20rpx;
+		    input {
+				background-color: #fff;
+				border-radius: 6rpx;
+			}
+		}
+	}
+	swiper {
+		height: 340rpx;
+		image {
+			width: 750rpx;
+			height: 340rpx;
+		}
+	}
 </style>
