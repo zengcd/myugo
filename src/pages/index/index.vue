@@ -165,6 +165,7 @@
   .title {
     width: 750rpx;
     height: 60rpx;
+    box-sizing: border-box;
     padding: 20rpx 0 0 10rpx;
     background-color: #f4f4f4;
   }
