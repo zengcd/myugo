@@ -1,19 +1,28 @@
 <template>
-  	 <!-- 搜索栏 -->
-	 <view class="search">
-      <!-- 搜索框 -->
-      <view class="input-box">
-       <input type='text'/>
-      </view>
-       <!-- 搜索结果 -->
-      <view class="content"></view>
+  <view class="search" :class='{focused: isFocused}'>
+    <!-- 搜索栏标签 -->
+    <view class="input-box">
+      <input type="text" @focus='goSearch'/>
     </view>
+    <!-- 搜索的结果 -->
+    <view class="content"></view>
+  </view>
 </template>
 
 <script>
-  export default {
-      data(){
-      }
+export default {
+  data () {
+    return {
+      isFocused: false
+    }
+  },
+  methods: {
+    goSearch () {
+      console.log('hello')
+      // 当输入框获取焦点时，在父元素添加一个类名 focused
+      this.isFocused = true
+    }
+  }
 }
 </script>
 
@@ -26,6 +35,11 @@
 				background-color: #fff;
 				border-radius: 6rpx;
 			}
-		}
+        }
+        &.focused {
+    .input-box {
+      background-color: #eee;
+    }
+  }
 	}
 </style>

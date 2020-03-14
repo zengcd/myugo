@@ -1,6 +1,5 @@
 <template>
   <view>
-    <!-- 搜索栏 -->
     <search/>
     <view>分类页面</view>
   </view>
