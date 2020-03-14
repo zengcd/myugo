@@ -15,20 +15,20 @@ export default {
   data() {
     return {
       isFocused: false,
-      placeholder:''
+      placeholder: ""
     };
   },
   methods: {
     goSearch() {
       console.log("hello");
       // 当输入框获取焦点时，在父元素添加一个类名 focused
-      this.isFocused = true
-      this.placeholder = "请输入想要的商品"
+      this.isFocused = true;
+      this.placeholder = "请输入想要的商品";
     },
     handleCancel() {
       // 取消动作：恢复原始状态
-      this.isFocused = false
-      this.placeholder = ""
+      this.isFocused = false;
+      this.placeholder = "";
     }
   }
 };
@@ -36,6 +36,16 @@ export default {
 
 <style lang="less" scoped>
 .search {
+  .content {
+    position: absolute;
+    top: 90rpx;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: #fff;
+    display: none;
+  }
   .input-box {
     background-color: #eb4450;
     position: relative;
@@ -75,6 +85,9 @@ export default {
     }
   }
   &.focused {
+    .content {
+      display: block;
+    }
     .input-box {
       background-color: #eee;
       &::after {
