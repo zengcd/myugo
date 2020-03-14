@@ -1,9 +1,9 @@
 <template>
-  <view class="search" :class='{focused: isFocused}'>
+  <view class="search" :class="{focused: isFocused}">
     <!-- 搜索栏标签 -->
     <view class="input-box">
-      <input type="text" @focus='goSearch'/>
-      <text class='cancel' @click='handleCancel'>取消</text>
+      <input type="text" @focus="goSearch" />
+      <text class="cancel" @click="handleCancel">取消</text>
     </view>
     <!-- 搜索的结果 -->
     <view class="content"></view>
@@ -12,50 +12,57 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       isFocused: false
-    }
+    };
   },
-      methods: {
-    goSearch () {
-      console.log('hello')
+  methods: {
+    goSearch() {
+      console.log("hello");
       // 当输入框获取焦点时，在父元素添加一个类名 focused
-      this.isFocused = true
+      this.isFocused = true;
     },
-    goSearch () {
-      console.log('hello')
+    goSearch() {
+      console.log("hello");
       // 当输入框获取焦点时，在父元素添加一个类名 focused
-      this.isFocused = true
+      this.isFocused = true;
     },
-    handleCancel () {
+    handleCancel() {
       // 取消动作：恢复原始状态
-      this.isFocused = false
+      this.isFocused = false;
+    }
   }
-  }
-}
+};
 </script>
 
 <style lang="less" scoped>
-	.search {
-		.input-box {
-		    background-color: #EB4450;
-		    padding: 20rpx;
-		    input {
-				background-color: #fff;
-				border-radius: 6rpx;
-            }
-            .cancel {
+.search {
+  .input-box {
+    background-color: #eb4450;
+    padding: 20rpx 16rpx;
+    display: flex;
+    input {
+      background-color: #fff;
+      flex: 1;
+    }
+    .cancel {
       display: none;
     }
-        }
-        &.focused {
+  }
+  &.focused {
     .input-box {
       background-color: #eee;
     }
     .cancel {
       display: block;
+      width: 100rpx;
+      height: 50rpx;
+      line-height: 50rpx;
+      text-align: center;
+      font-size: 30rpx;
+      display: block;
     }
   }
-	}
+}
 </style>
