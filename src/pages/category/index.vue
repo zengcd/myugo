@@ -1,11 +1,19 @@
 <template>
-  <view>分类页面</view>
+  <view>
+    <!-- 搜索栏 -->
+    <search/>
+    <view>分类页面</view>
+  </view>
 </template>
 
 <script>
+import search from '@/components/search.vue'
   export default {
       data(){
           return{}
+      },
+      components:{
+        search
       }
 }
 </script>

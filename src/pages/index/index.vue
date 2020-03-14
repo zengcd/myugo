@@ -1,15 +1,7 @@
 <template>
 	<view class="container">
-	 <!-- 搜索栏 -->
-	 <view class="search">
-      <!-- 搜索框 -->
-      <view class="input-box">
-       <input type='text'/>
-      </view>
-  <!-- 搜索结果 -->
-      <view class="content"></view>
-    </view>
-
+<!-- 搜索栏 -->
+<search/>
 <swiper indicator-dots>
   <swiper-item>
     <image src='/static/uploads/banner1.png'/>
@@ -117,12 +109,16 @@
 </template>
 
 <script>
+import search from '@/components/search.vue'
 	export default {
 		data() {
 			return {
 				title: 'Hello'
 			}
-		},
+    },
+    components:{
+      search
+    },
 		onLoad() {
 
 		},
@@ -133,16 +129,7 @@
 </script>
 
 <style lang='less'>
-	.search {
-		.input-box {
-		    background-color: #EB4450;
-		    padding: 20rpx;
-		    input {
-				background-color: #fff;
-				border-radius: 6rpx;
-			}
-		}
-	}
+
 	swiper {
 		height: 340rpx;
 		image {
