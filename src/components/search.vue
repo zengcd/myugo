@@ -24,11 +24,19 @@ export default {
       // 当输入框获取焦点时，在父元素添加一个类名 focused
       this.isFocused = true;
       this.placeholder = "请输入想要的商品";
+      // 触发父组件自定义事件
+      this.$emit("window-height", {
+        height: uni.getSystemInfoSync().windowHeight
+      });
     },
     handleCancel() {
       // 取消动作：恢复原始状态
       this.isFocused = false;
       this.placeholder = "";
+      // 取消时操作
+      this.$emit("window-height", {
+        pageHeight: "auto"
+      });
     }
   }
 };

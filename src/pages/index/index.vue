@@ -1,7 +1,7 @@
 <template>
-	<view class="container">
+	<view class='container' :style="{height: pageHeight, overflow: 'hidden'}"><view class="container">
 <!-- 搜索栏 -->
-<search/>
+<search @window-height="handleWindowHeight" />
 <swiper indicator-dots>
   <swiper-item>
     <image src='/static/uploads/banner1.png'/>
@@ -113,7 +113,8 @@ import search from '@/components/search.vue'
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+        // title: 'Hello',
+        pageHeight: 'auto'
 			}
     },
     components:{
@@ -123,7 +124,11 @@ import search from '@/components/search.vue'
 
 		},
 		methods: {
-
+      
+    
+    handleWindowHeight (data) {
+  this.pageHeight = data.height + 'px';
+}
 		}
 	}
 </script>
