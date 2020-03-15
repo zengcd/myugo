@@ -1,5 +1,5 @@
 <template>
-	<view class='container' :style="{height: pageHeight, overflow: 'hidden'}"><view class="container">
+	<view class='container' :style="{height: pageHeight, overflow: 'hidden'}">
 <!-- 搜索栏 -->
 <search @window-height="handleWindowHeight" />
 <swiper indicator-dots>
