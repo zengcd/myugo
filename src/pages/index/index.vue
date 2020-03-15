@@ -3,14 +3,8 @@
 <!-- 搜索栏 -->
 <search @window-height="handleWindowHeight" />
 <swiper indicator-dots>
-  <swiper-item>
-    <image src='/static/uploads/banner1.png'/>
-  </swiper-item>
-  <swiper-item>
-    <image src='/static/uploads/banner2.png'/>
-  </swiper-item>
-  <swiper-item>
-    <image src='/static/uploads/banner3.png'/>
+  <swiper-item :key='item.goods_id' v-for='item in swiperData'>
+    <image :src='item.image_src'/>
   </swiper-item>
 </swiper>
 
@@ -36,7 +30,7 @@
     <!-- 标题 -->
     <view class="title">
       <image src='/static/uploads/pic_floor01_title.png'/>
-    </view>
+           </view>
     <!-- 条目 -->
     <view class="items">
       <navigator url=''>
@@ -114,18 +108,26 @@ import search from '@/components/search.vue'
 		data() {
 			return {
         // title: 'Hello',
-        pageHeight: 'auto'
+        pageHeight: 'auto',
+         swiperData:[]
 			}
     },
     components:{
       search
     },
 		onLoad() {
-
+      this.querySwiperData()
 		},
 		methods: {
-      
-    
+      querySwiperData () {
+  // 获取轮播图数据
+  wx.request({
+    url: 'https://api-ugo-dev.itheima.net/api/public/v1/home/swiperdata',
+    success: (res) => {
+      this.swiperData = res.data.message
+    }
+  })
+},
     handleWindowHeight (data) {
   this.pageHeight = data.height + 'px';
 }
